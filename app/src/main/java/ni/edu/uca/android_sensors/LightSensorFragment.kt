@@ -31,7 +31,7 @@ class LightSensorFragment : Fragment(), SensorEventListener {
 
     override fun onSensorChanged(event: SensorEvent) {
         val lux = event.values[0]
-        binding.tvLux.text = lux.toString()
+        binding.tvLux.text = "${lux} lx"
         if (lux < 25) {
             binding.tvText.text = "Es de noche"
             binding.tvText.setTextColor(resources.getColor(R.color.white))
@@ -42,7 +42,7 @@ class LightSensorFragment : Fragment(), SensorEventListener {
             binding.tvText.text = "Es de día"
             binding.tvText.setTextColor(resources.getColor(R.color.black))
             binding.lyLightSensor.setBackgroundColor(resources.getColor(R.color.white))
-            binding.tvText.setTextColor(resources.getColor(R.color.black))
+            binding.tvLux.setTextColor(resources.getColor(R.color.black))
         }
     }
 
