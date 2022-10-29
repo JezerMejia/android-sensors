@@ -1,59 +1,66 @@
 package ni.edu.uca.android_sensors
 
+import android.app.Service
+import android.content.Context
+import android.hardware.*
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
+import ni.edu.uca.android_sensors.databinding.FragmentLightSensorBinding
+import ni.edu.uca.android_sensors.databinding.FragmentMenuBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class LightSensorFragment : Fragment(), SensorEventListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [LightSensorFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class LightSensorFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentLightSensorBinding
+    private lateinit var sensorManager: SensorManager
+    private var lightSensor: Sensor? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+        }
+        sensorManager = context?.getSystemService(Service.SENSOR_SERVICE) as SensorManager
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+        sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL)
+    }
+
+    override fun onSensorChanged(event: SensorEvent) {
+        val lux = event.values[0]
+        binding.tvLux.text = lux.toString()
+        if (lux < 25) {
+            binding.tvText.text = "Es de noche"
+            binding.tvText.setTextColor(resources.getColor(R.color.white))
+            binding.lyLightSensor.setBackgroundColor(resources.getColor(R.color.black))
+            binding.tvLux.setTextColor(resources.getColor(R.color.white))
+        }
+        else {
+            binding.tvText.text = "Es de día"
+            binding.tvText.setTextColor(resources.getColor(R.color.black))
+            binding.lyLightSensor.setBackgroundColor(resources.getColor(R.color.white))
+            binding.tvText.setTextColor(resources.getColor(R.color.black))
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_light_sensor, container, false)
+    override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LightSensorFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LightSensorFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onDestroy() {
+        super.onDestroy()
+        sensorManager.unregisterListener(this)
+
     }
+
+    override fun onCreateView(
+        layoutInflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentLightSensorBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
+
 }
