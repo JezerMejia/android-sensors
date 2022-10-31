@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_menuFragment_to_lightSensorFragment"
             app:destination="@id/lightSensorFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_gyroscopeFragment"
+            app:destination="@id/gyroscopeFragment" />
     </fragment>
     <fragment
         android:id="@+id/lightSensorFragment"
         android:name="ni.edu.uca.android_sensors.LightSensorFragment"
         android:label="fragment_light_sensor"
         tools:layout="@layout/fragment_light_sensor" />
+    <fragment
+        android:id="@+id/gyroscopeFragment"
+        android:name="ni.edu.uca.android_sensors.GyroscopeFragment"
+        android:label="fragment_gyroscope"
+        tools:layout="@layout/fragment_gyroscope" />
 </navigation>
