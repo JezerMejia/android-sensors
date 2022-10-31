@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programacion/4 Semestre/Moviles/android-sensors/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Programacion/4 Semestre/Moviles/android-sensors/app/src/main/res/layout/fragment_menu.xml" value="0.33" />
+        <entry key="..\:/Programacion/4 Semestre/Moviles/android-sensors/app/src/main/res/layout/fragment_sensor_accel.xml" value="0.1" />
         <entry key="..\:/Users/mandi/Desktop/androidsensors/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mandi/Desktop/androidsensors/app/src/main/res/layout/fragment_light_sensor.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mandi/Desktop/androidsensors/app/src/main/res/layout/fragment_menu.xml" value="0.36666666666666664" />
