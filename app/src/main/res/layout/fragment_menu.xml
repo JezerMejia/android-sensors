@@ -31,10 +31,10 @@
         app:layout_constraintVertical_bias="0.20"
         />
     <Button
-        android:id="@+id/btnXSensor"
+        android:id="@+id/btnGyroscope"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Sensor de X"
+        android:text="Giroscopio"
         app:layout_constraintTop_toBottomOf="@id/btnLightSensor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Sensor de Y"
-        app:layout_constraintTop_toBottomOf="@id/btnXSensor"
+        app:layout_constraintTop_toBottomOf="@id/btnGyroscope"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
