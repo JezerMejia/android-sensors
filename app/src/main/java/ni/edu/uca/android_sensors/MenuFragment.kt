@@ -30,9 +30,8 @@ class MenuFragment : Fragment() {
         binding.btnGyroscope.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_gyroscopeFragment)
         }
-        binding.btnYSensor.setOnClickListener {
-            // Cambiar param del navigate
-            findNavController().navigate(R.id.action_menuFragment_to_lightSensorFragment)
+        binding.btnSensorAccel.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_sensorAccel)
         }
 
         return binding.root
