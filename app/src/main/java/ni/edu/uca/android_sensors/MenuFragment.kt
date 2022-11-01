@@ -25,13 +25,16 @@ class MenuFragment : Fragment() {
 
         //Button navigation
         binding.btnLightSensor.setOnClickListener {
-            findNavController().navigate(R.id.action_menuFragment_to_lightSensorFragment)
+            val action = MenuFragmentDirections.actionMenuFragmentToLightSensorFragment()
+            findNavController().navigate(action)
         }
         binding.btnGyroscope.setOnClickListener {
-            findNavController().navigate(R.id.action_menuFragment_to_gyroscopeFragment)
+            val action = MenuFragmentDirections.actionMenuFragmentToGyroscopeFragment()
+            findNavController().navigate(action)
         }
         binding.btnSensorAccel.setOnClickListener {
-            findNavController().navigate(R.id.action_menuFragment_to_sensorAccel)
+            val action = MenuFragmentDirections.actionMenuFragmentToSensorAccel()
+            findNavController().navigate(action)
         }
 
         return binding.root
