@@ -11,7 +11,9 @@
         <entry key="..\:/Users/mandi/Desktop/androidsensors/app/src/main/res/layout/fragment_menu.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27794871794871795" />
         <entry key="app/src/main/res/layout/fragment_gyroscope.xml" value="0.27794871794871795" />
+        <entry key="app/src/main/res/layout/fragment_light_sensor.xml" value="0.27794871794871795" />
         <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.27794871794871795" />
+        <entry key="app/src/main/res/layout/fragment_sensor_accel.xml" value="0.27794871794871795" />
       </map>
     </option>
   </component>
