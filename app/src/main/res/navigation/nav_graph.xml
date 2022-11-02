@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/menuFragment"
         android:name="ni.edu.uca.android_sensors.MenuFragment"
-        android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" >
+        android:label="Menú"
+        tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_menuFragment_to_lightSensorFragment"
             app:destination="@id/lightSensorFragment" />
@@ -23,16 +23,16 @@
     <fragment
         android:id="@+id/lightSensorFragment"
         android:name="ni.edu.uca.android_sensors.LightSensorFragment"
-        android:label="fragment_light_sensor"
+        android:label="Sensor de Luz"
         tools:layout="@layout/fragment_light_sensor" />
     <fragment
         android:id="@+id/gyroscopeFragment"
         android:name="ni.edu.uca.android_sensors.GyroscopeFragment"
-        android:label="fragment_gyroscope"
+        android:label="Giroscopio"
         tools:layout="@layout/fragment_gyroscope" />
     <fragment
         android:id="@+id/sensorAccel"
         android:name="ni.edu.uca.android_sensors.SensorAccel"
-        android:label="fragment_sensor_accel"
+        android:label="Acelerómetro"
         tools:layout="@layout/fragment_sensor_accel" />
 </navigation>
